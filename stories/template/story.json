@@ -3,7 +3,7 @@
   "id": "ui-test-phone-v2",
   "title": "捡手机",
   "description": "仅用于界面测试，不含剧情",
-  "revision": 7,
+  "revision": 8,
   "phone": {
     "owner": "朱志鑫",
     "date": "2026-11-19",
@@ -192,7 +192,44 @@
         "owner",
         "zhangji"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-zhangji-msg-1",
+          "body": "你今天是不是又忘记吃饭了？",
+          "senderId": "zhangji",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-zhangji-msg-2",
+          "body": "没有，刚刚吃了。你怎么跟查岗一样。",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-zhangji-msg-3",
+          "body": "我这是合理关心。下次拍张照片证明一下。",
+          "senderId": "zhangji",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-zhangji-msg-4",
+          "body": "要求还挺多，知道了。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-zhangji-msg-5",
+          "body": "晚上有空吗？一起打会儿游戏。",
+          "senderId": "zhangji",
+          "time": "2026-11-19T12:28:00"
+        },
+        {
+          "id": "wechat-zhangji-msg-6",
+          "body": "晚点叫你。",
+          "senderId": "owner",
+          "time": "2026-11-19T12:35:00"
+        }
+      ]
     },
     {
       "id": "wechat-zuohang",
@@ -202,7 +239,38 @@
         "owner",
         "zuohang"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-zuohang-msg-1",
+          "body": "刚才那个视频我看了，最后一秒真的很好笑。",
+          "senderId": "zuohang",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-zuohang-msg-2",
+          "body": "我就知道你会注意到最后一秒哈哈。",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-zuohang-msg-3",
+          "body": "前面都在铺垫，最后才是重点。",
+          "senderId": "zuohang",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-zuohang-msg-4",
+          "body": "下次剪辑交给你。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-zuohang-msg-5",
+          "body": "可以，记得给我署名。",
+          "senderId": "zuohang",
+          "time": "2026-11-19T12:28:00"
+        }
+      ]
     },
     {
       "id": "wechat-zhangzeyu",
@@ -212,7 +280,38 @@
         "owner",
         "zhangzeyu"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-zhangzeyu-msg-1",
+          "body": "今天外面降温了，出门记得带外套。",
+          "senderId": "zhangzeyu",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-zhangzeyu-msg-2",
+          "body": "收到，你怎么比天气预报还准。",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-zhangzeyu-msg-3",
+          "body": "因为我刚刚被风吹清醒了。",
+          "senderId": "zhangzeyu",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-zhangzeyu-msg-4",
+          "body": "那我把外套穿上。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-zhangzeyu-msg-5",
+          "body": "乖，别感冒。",
+          "senderId": "zhangzeyu",
+          "time": "2026-11-19T12:28:00"
+        }
+      ]
     },
     {
       "id": "wechat-suxinhao",
@@ -222,7 +321,38 @@
         "owner",
         "suxinhao"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-suxinhao-msg-1",
+          "body": "我把今天要练的部分重新顺了一遍。",
+          "senderId": "suxinhao",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-suxinhao-msg-2",
+          "body": "发我看看，我也再熟悉一下。",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-suxinhao-msg-3",
+          "body": "这版节奏会更顺，副歌衔接也改了。",
+          "senderId": "suxinhao",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-suxinhao-msg-4",
+          "body": "看到了，确实舒服很多。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-suxinhao-msg-5",
+          "body": "那就按这版来，明天一起过一遍。",
+          "senderId": "suxinhao",
+          "time": "2026-11-19T12:28:00"
+        }
+      ]
     },
     {
       "id": "wechat-mom",
@@ -232,7 +362,44 @@
         "owner",
         "mom"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-mom-msg-1",
+          "body": "今天忙不忙？记得按时吃饭。",
+          "senderId": "mom",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-mom-msg-2",
+          "body": "今天还好，刚吃完。",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-mom-msg-3",
+          "body": "天气凉了，晚上回去穿厚一点。",
+          "senderId": "mom",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-mom-msg-4",
+          "body": "知道啦，你也早点休息。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-mom-msg-5",
+          "body": "有空给家里打个电话。",
+          "senderId": "mom",
+          "time": "2026-11-19T12:28:00"
+        },
+        {
+          "id": "wechat-mom-msg-6",
+          "body": "好，明天给你打。",
+          "senderId": "owner",
+          "time": "2026-11-19T12:35:00"
+        }
+      ]
     },
     {
       "id": "wechat-assistant",
@@ -242,7 +409,38 @@
         "owner",
         "assistant"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-assistant-msg-1",
+          "body": "明天的行程已经整理好，早上九点出发。",
+          "senderId": "assistant",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-assistant-msg-2",
+          "body": "收到，路上时间够吗？",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-assistant-msg-3",
+          "body": "预留了缓冲时间，早餐也安排好了。",
+          "senderId": "assistant",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-assistant-msg-4",
+          "body": "辛苦了，文件发我一份。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-assistant-msg-5",
+          "body": "已经发到工作群和邮箱了。",
+          "senderId": "assistant",
+          "time": "2026-11-19T12:28:00"
+        }
+      ]
     },
     {
       "id": "wechat-zhangjunhao",
@@ -252,7 +450,38 @@
         "owner",
         "zhangjunhao"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-zhangjunhao-msg-1",
+          "body": "晚上要不要出来活动一下？",
+          "senderId": "zhangjunhao",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-zhangjunhao-msg-2",
+          "body": "去哪儿？",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-zhangjunhao-msg-3",
+          "body": "先吃点东西，再随便走走。",
+          "senderId": "zhangjunhao",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-zhangjunhao-msg-4",
+          "body": "可以，等我忙完联系你。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-zhangjunhao-msg-5",
+          "body": "行，不急。",
+          "senderId": "zhangjunhao",
+          "time": "2026-11-19T12:28:00"
+        }
+      ]
     },
     {
       "id": "wechat-yuyuhan",
@@ -262,7 +491,38 @@
         "owner",
         "yuyuhan"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-yuyuhan-msg-1",
+          "body": "你上次推荐的歌我循环了一下午。",
+          "senderId": "yuyuhan",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-yuyuhan-msg-2",
+          "body": "是不是越听越上头。",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-yuyuhan-msg-3",
+          "body": "尤其是副歌，已经记住了。",
+          "senderId": "yuyuhan",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-yuyuhan-msg-4",
+          "body": "下次见面一起唱。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-yuyuhan-msg-5",
+          "body": "一言为定。",
+          "senderId": "yuyuhan",
+          "time": "2026-11-19T12:28:00"
+        }
+      ]
     },
     {
       "id": "wechat-muzhicheng",
@@ -272,7 +532,38 @@
         "owner",
         "muzhicheng"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-muzhicheng-msg-1",
+          "body": "我找到一家看起来不错的甜品店！",
+          "senderId": "muzhicheng",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-muzhicheng-msg-2",
+          "body": "地址发我，收藏一下。",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-muzhicheng-msg-3",
+          "body": "发你啦，听说他们家的蛋糕很好吃。",
+          "senderId": "muzhicheng",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-muzhicheng-msg-4",
+          "body": "下次一起去试试。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-muzhicheng-msg-5",
+          "body": "好耶，我负责点单。",
+          "senderId": "muzhicheng",
+          "time": "2026-11-19T12:28:00"
+        }
+      ]
     },
     {
       "id": "wechat-zhangzimo",
@@ -282,7 +573,38 @@
         "owner",
         "zhangzimo"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-zhangzimo-msg-1",
+          "body": "刚刚那张照片拍得不错。",
+          "senderId": "zhangzimo",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-zhangzimo-msg-2",
+          "body": "光线刚好，随手拍的。",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-zhangzimo-msg-3",
+          "body": "下次也帮我拍一张，想要那种自然一点的。",
+          "senderId": "zhangzimo",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-zhangzimo-msg-4",
+          "body": "没问题，不摆拍最好看。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-zhangzimo-msg-5",
+          "body": "成交。",
+          "senderId": "zhangzimo",
+          "time": "2026-11-19T12:28:00"
+        }
+      ]
     },
     {
       "id": "wechat-huangshuo",
@@ -292,7 +614,38 @@
         "owner",
         "huangshuo"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-huangshuo-msg-1",
+          "body": "你看到我发的那份清单了吗？",
+          "senderId": "huangshuo",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-huangshuo-msg-2",
+          "body": "看到了，整理得很清楚。",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-huangshuo-msg-3",
+          "body": "我把容易漏掉的地方也标出来了。",
+          "senderId": "huangshuo",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-huangshuo-msg-4",
+          "body": "这下省心多了，谢谢。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-huangshuo-msg-5",
+          "body": "小事，后面有变动再同步。",
+          "senderId": "huangshuo",
+          "time": "2026-11-19T12:28:00"
+        }
+      ]
     },
     {
       "id": "wechat-feige",
@@ -302,7 +655,38 @@
         "owner",
         "feige"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-feige-msg-1",
+          "body": "最近状态怎么样？别把自己排得太满。",
+          "senderId": "feige",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-feige-msg-2",
+          "body": "还不错，事情都在按计划推进。",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-feige-msg-3",
+          "body": "好，重要的事情提前沟通，注意休息。",
+          "senderId": "feige",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-feige-msg-4",
+          "body": "明白，谢谢飞哥。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-feige-msg-5",
+          "body": "有问题随时说。",
+          "senderId": "feige",
+          "time": "2026-11-19T12:28:00"
+        }
+      ]
     },
     {
       "id": "wechat-lifei",
@@ -312,7 +696,38 @@
         "owner",
         "lifei"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-lifei-msg-1",
+          "body": "后续安排以团队通知为准，有调整及时同步。",
+          "senderId": "lifei",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-lifei-msg-2",
+          "body": "收到，我会留意消息。",
+          "senderId": "owner",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-lifei-msg-3",
+          "body": "最近辛苦了，注意劳逸结合。",
+          "senderId": "lifei",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-lifei-msg-4",
+          "body": "好的，谢谢李飞。",
+          "senderId": "owner",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-lifei-msg-5",
+          "body": "保持沟通。",
+          "senderId": "lifei",
+          "time": "2026-11-19T12:28:00"
+        }
+      ]
     },
     {
       "id": "wechat-group-top",
@@ -326,7 +741,50 @@
         "suxinhao",
         "boss"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-group-top-msg-1",
+          "body": "这周的安排大家看一下，有冲突及时提。",
+          "senderId": "boss",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-group-top-msg-2",
+          "body": "我这边时间没问题。",
+          "senderId": "zhangji",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-group-top-msg-3",
+          "body": "收到，我把需要准备的东西列一下。",
+          "senderId": "zuohang",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-group-top-msg-4",
+          "body": "我也可以帮忙核对流程。",
+          "senderId": "zhangzeyu",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-group-top-msg-5",
+          "body": "我晚点把排练部分同步出来。",
+          "senderId": "suxinhao",
+          "time": "2026-11-19T12:28:00"
+        },
+        {
+          "id": "wechat-group-top-msg-6",
+          "body": "我看过了，按这个时间走就行。",
+          "senderId": "owner",
+          "time": "2026-11-19T12:35:00"
+        },
+        {
+          "id": "wechat-group-top-msg-7",
+          "body": "好，细节明天再确认。",
+          "senderId": "boss",
+          "time": "2026-11-19T13:42:00"
+        }
+      ]
     },
     {
       "id": "wechat-group-eagle",
@@ -339,7 +797,44 @@
         "zhangzeyu",
         "suxinhao"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "wechat-group-eagle-msg-1",
+          "body": "今天谁先到？我可以提前过去。",
+          "senderId": "zhangji",
+          "time": "2026-11-19T10:00:00"
+        },
+        {
+          "id": "wechat-group-eagle-msg-2",
+          "body": "我应该最早，路上给你们发消息。",
+          "senderId": "zuohang",
+          "time": "2026-11-19T10:07:00"
+        },
+        {
+          "id": "wechat-group-eagle-msg-3",
+          "body": "我带水，大家别忘了拿。",
+          "senderId": "zhangzeyu",
+          "time": "2026-11-19T11:14:00"
+        },
+        {
+          "id": "wechat-group-eagle-msg-4",
+          "body": "我把要用的东西都装好了。",
+          "senderId": "suxinhao",
+          "time": "2026-11-19T11:21:00"
+        },
+        {
+          "id": "wechat-group-eagle-msg-5",
+          "body": "那到地方见，路上注意安全。",
+          "senderId": "owner",
+          "time": "2026-11-19T12:28:00"
+        },
+        {
+          "id": "wechat-group-eagle-msg-6",
+          "body": "收到，等会儿见！",
+          "senderId": "zhangji",
+          "time": "2026-11-19T12:35:00"
+        }
+      ]
     }
   ],
   "content": {
