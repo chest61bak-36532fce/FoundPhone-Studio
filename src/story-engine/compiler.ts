@@ -58,6 +58,7 @@ export const storySchema = z
           phone: z.string().default(""),
           avatar: z.string().default(""),
           bio: z.string().default(""),
+          phonebook: z.boolean().default(true),
         }),
       )
       .default([]),
@@ -164,18 +165,19 @@ export function compileStory(raw: unknown): { story: Story; work: Work } {
   s.contacts.forEach((c, n) => {
     if (c.avatar && !safeMedia(c.avatar))
       fail(`contacts.${n}.avatar`, "无效头像");
+    if (!c.phonebook) return;
+    const card = {
+      title: c.name,
+      body: c.bio,
+      meta: { phone: c.phone },
+      avatar: c.avatar,
+      sender: c.name,
+      kind: "text" as const,
+    };
     if (installed.has("contacts"))
-      add(
-        "contacts",
-        {
-          id: c.id + "-card",
-          title: c.name,
-          body: c.bio,
-          meta: { phone: c.phone },
-          avatar: c.avatar,
-        },
-        `contacts.${n}`,
-      );
+      add("contacts", { ...card, id: c.id + "-card" }, `contacts.${n}`);
+    if (installed.has("phone"))
+      add("phone", { ...card, id: c.id + "-phone-card" }, `contacts.${n}.phonebook`);
   });
   s.chats.forEach((chat, n) => {
     unique(chat.id, `chats.${n}.id`);
