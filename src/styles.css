@@ -4918,3 +4918,15 @@ label {
   background: #e34f58;
   transform: rotate(135deg);
 }
+
+/* Custom lock-screen wallpaper: The Weeknd playlist photo */
+.wallpaper-weeknd {
+  background-color: #050609;
+  background-image: linear-gradient(180deg, #00000012, #00000026), url("../lockscreen-weeknd.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wallpaper-weeknd .wallpaper-orb {
+  display: none;
+}
