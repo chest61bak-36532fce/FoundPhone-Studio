@@ -161,6 +161,20 @@ export function validateLayout(raw: unknown, input: Work) {
     layout.order = layout.order.filter((id) => !removedApps.has(id));
     layout.previewLayoutRevision = 3;
   }
+  if (w.id === "ui-test-phone-v2" && layout.previewLayoutRevision < 4) {
+    const removedApps = new Set(["bilibili", "alipay"]);
+    for (const app of layout.apps) {
+      if (removedApps.has(app.id)) {
+        app.installed = false;
+        app.visible = false;
+        app.dock = false;
+        app.folder = "";
+        delete layout.positions[app.id];
+      }
+    }
+    layout.order = layout.order.filter((id) => !removedApps.has(id));
+    layout.previewLayoutRevision = 4;
+  }
   const entries = homeEntries(layout),
     packed = packHome(entries, layout.positions);
   for (const entry of entries) {
