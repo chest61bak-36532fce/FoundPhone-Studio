@@ -152,9 +152,15 @@ export function NeteaseSkin(p: Props) {
   const { tab, setTab, q, setQ, items } = useContent(p, "发现");
   const [folder, setFolder] = useState(""),
     [track, setTrack] = useTrack(p, items);
-  const list = folder
-    ? items.filter((i) => (i.folder || "我的歌单") === folder)
-    : items;
+  const [recommendations] = useState(() =>
+    [...items].sort(() => Math.random() - 0.5).slice(0, Math.min(8, items.length)),
+  );
+  const list =
+    tab === "发现"
+      ? recommendations
+      : folder
+        ? items.filter((i) => (i.folder || "我的歌单") === folder)
+        : items;
   return (
     <div className="catalog-skin netease-ui">
       <Header p={p} />
@@ -180,6 +186,7 @@ export function NeteaseSkin(p: Props) {
                 </button>
               ))}
             </div>
+            <h3>为你推荐</h3>
           </>
         ) : (
           <>
