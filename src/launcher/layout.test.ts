@@ -177,5 +177,5 @@ it("migrates the test preview to uninstall QQ, forum, and Messenger", async () =
     expect(migrated.positions[id]).toBeUndefined();
     expect(migrated.order).not.toContain(id);
   }
-  expect(migrated.previewLayoutRevision).toBe(3);
+  expect(migrated.previewLayoutRevision).toBe(4);
 });
