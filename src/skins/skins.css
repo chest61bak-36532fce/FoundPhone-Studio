@@ -4133,7 +4133,7 @@
 
 /* Reference-inspired profile and account identity */
 .weibo-profile-reference{display:block;padding:0;background:#fff}
-.weibo-profile-cover{height:150px;padding:16px;display:flex;justify-content:flex-end;align-items:flex-start;color:#fff;font-size:12px;background:linear-gradient(145deg,#d65c51 0%,#f08a71 52%,#b84c49 100%)}
+.weibo-profile-cover{height:150px;padding:16px;display:flex;justify-content:flex-end;align-items:flex-start;color:#fff;font-size:12px;background:radial-gradient(ellipse at 18% 24%,#ffffffa8 0 9%,transparent 10%),radial-gradient(ellipse at 76% 34%,#ffffff88 0 13%,transparent 14%),linear-gradient(140deg,#a8d4e5 0%,#c9d7e9 44%,#f0d6e2 100%)}
 .weibo-profile-cover span{padding:6px 12px;border-radius:18px;background:#7b34366b}
 .weibo-profile-main{position:relative;margin-top:-28px;padding:0 16px 20px;background:#fff}
 .weibo-profile-main>.catalog-avatar{width:82px;height:82px;border:3px solid #fff;border-radius:50%;background:#25252b;font-size:30px}
