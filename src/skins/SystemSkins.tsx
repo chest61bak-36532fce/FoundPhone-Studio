@@ -46,7 +46,12 @@ export function PhoneSkin(p: Props) {
   const { tab, setTab, q, setQ, items } = useContent(p, "最近通话");
   const [digits, setDigits] = useState(""),
     [call, setCall] = useState("");
-  const list = tab === "收藏" ? items.filter((i) => i.favorite) : items;
+  const list =
+    tab === "通讯录"
+      ? items.filter((i) => i.kind !== "call" && i.meta.status !== "未接")
+      : tab === "收藏"
+        ? items.filter((i) => i.favorite && i.kind === "call")
+        : items.filter((i) => i.kind === "call");
   return (
     <div className="catalog-skin native-phone">
       <Header p={p} />
@@ -105,15 +110,16 @@ export function PhoneSkin(p: Props) {
                 key={i.id}
                 onClick={() => p.onItem(i)}
               >
-                <Phone size={17} />
+                {tab === "通讯录" ? <Avatar name={i.title} /> : <Phone size={17} />}
                 <span>
                   <strong>{i.title}</strong>
                   <small>
-                    {meta(i, "number", i.sender)} ·{" "}
-                    {meta(i, "status", "通话记录")}
+                    {tab === "通讯录"
+                      ? meta(i, "phone", "未设置号码")
+                      : `${meta(i, "number", i.sender)} · ${meta(i, "status", "通话记录")}`}
                   </small>
                 </span>
-                <time>{i.time.slice(5, 10)}</time>
+                {tab !== "通讯录" && <time>{i.time.slice(5, 10)}</time>}
               </button>
             ))}
             <Empty items={list} />
