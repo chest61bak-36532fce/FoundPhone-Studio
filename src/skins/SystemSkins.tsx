@@ -57,7 +57,7 @@ export function PhoneSkin(p: Props) {
             ...i,
             meta: {
               ...i.meta,
-              callCount: String(callItems.filter((entry) => entry.title === i.title).length),
+              callCount: meta(i, "callCount", String(callItems.filter((entry) => entry.title === i.title).length)),
             },
           },
         ]),
@@ -129,7 +129,7 @@ export function PhoneSkin(p: Props) {
               >
                 {tab === "通讯录" ? <Avatar name={i.title} /> : <Phone size={17} />}
                 <span>
-                  <strong>{tab === "最近通话" ? `${i.title} (${meta(i, "callCount", "1")})` : i.title}</strong>
+                  <strong>{tab === "最近通话" && Number(meta(i, "callCount", "1")) > 1 ? `${i.title} (${meta(i, "callCount", "1")})` : i.title}</strong>
                   <small>
                     {tab === "通讯录"
                       ? meta(i, "phone", "未设置号码")
