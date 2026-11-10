@@ -186,6 +186,7 @@ export function NeteaseSkin(p: Props) {
             <div className="netease-profile">
               <Avatar name={p.owner ?? "我"} />
               <h2>{p.owner ?? "我的音乐"}</h2>
+              <small className="netease-user-id">用户 ID：x</small>
             </div>
             <h3>{folder || "我的歌单"}</h3>
           </>
