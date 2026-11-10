@@ -151,7 +151,7 @@ it("migrates the test preview to remove requested social apps and rename deliver
   expect(migrated.apps.find((a) => a.id === "delivery")).toMatchObject({
     name: "美团外卖", icon: "custom-icon",
   });
-  expect(migrated.previewLayoutRevision).toBe(2);
+  expect(migrated.previewLayoutRevision).toBe(3);
 });
 
 it("migrates the test preview to uninstall QQ, forum, and Messenger", async () => {
