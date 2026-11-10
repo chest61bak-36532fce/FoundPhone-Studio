@@ -70,7 +70,7 @@ export function PhoneSkin(p: Props) {
         ? items.filter((i) => i.favorite && i.kind === "call")
         : recentCallRows;
   return (
-    <div className="catalog-skin native-phone">
+    <div className={`catalog-skin native-phone ${tab === "通讯录" ? "native-contacts" : ""}`}>
       <Header p={p} />
       <div className="catalog-scroll">
         <h1>{tab}</h1>
@@ -121,25 +121,44 @@ export function PhoneSkin(p: Props) {
         ) : (
           <>
             <SearchBox value={q} set={setQ} />
-            {list.map((i) => (
-              <button
-                className={`call-row ${meta(i, "status") === "未接" ? "missed" : ""}`}
-                key={i.id}
-                onClick={() => p.onItem(i)}
-              >
-                {tab === "通讯录" ? <Avatar name={i.title} /> : <Phone size={17} />}
-                <span>
-                  <strong>{tab === "最近通话" && Number(meta(i, "callCount", "1")) > 1 ? `${i.title} (${meta(i, "callCount", "1")})` : i.title}</strong>
-                  <small>
-                    {tab === "通讯录"
-                      ? meta(i, "phone", "未设置号码")
-                      : `${meta(i, "number", i.sender)} · ${meta(i, "status", "通话记录")}`}
-                  </small>
-                </span>
-                {tab !== "通讯录" && <time>{i.time.slice(5, 10)}</time>}
-              </button>
-            ))}
-            <Empty items={list} />
+            {tab === "通讯录" ? (
+              <div className="native-contact-layout">
+                <div className="native-contact-list">
+                  {list.map((i) => (
+                    <Row
+                      key={i.id}
+                      item={{ ...i, body: meta(i, "phone", "未设置号码") }}
+                      onItem={p.onItem}
+                      leading={<Avatar name={i.title} />}
+                    />
+                  ))}
+                  <Empty items={list} />
+                </div>
+                <nav className="native-contact-index" aria-label="联系人字母索引">
+                  {"ABCDEFGHIJKLMNOPQRSTUVWXYZ#".split("").map((letter) => (
+                    <span key={letter}>{letter}</span>
+                  ))}
+                </nav>
+              </div>
+            ) : (
+              <>
+                {list.map((i) => (
+                  <button
+                    className={`call-row ${meta(i, "status") === "未接" ? "missed" : ""}`}
+                    key={i.id}
+                    onClick={() => p.onItem(i)}
+                  >
+                    <Phone size={17} />
+                    <span>
+                      <strong>{tab === "最近通话" && Number(meta(i, "callCount", "1")) > 1 ? `${i.title} (${meta(i, "callCount", "1")})` : i.title}</strong>
+                      <small>{`${meta(i, "number", i.sender)} · ${meta(i, "status", "通话记录")}`}</small>
+                    </span>
+                    <time>{i.time.slice(5, 10)}</time>
+                  </button>
+                ))}
+                <Empty items={list} />
+              </>
+            )}
           </>
         )}
       </div>
