@@ -57,7 +57,7 @@ export function defaultLayout(input: Work): DeviceLayout {
   return {
     version: 1,
     workId: w.id,
-    previewLayoutRevision: w.id === "ui-test-phone-v2" ? 1 : 0,
+    previewLayoutRevision: w.id === "ui-test-phone-v2" ? 2 : 0,
     apps: structuredClone(w.apps)
       .sort((a, b) => (a.id === "appstore" ? -1 : b.id === "appstore" ? 1 : 0))
       .map((a) =>
@@ -117,6 +117,34 @@ export function validateLayout(raw: unknown, input: Work) {
       ...layout.order.filter((id) => !visibleApps.includes(id)),
     ];
     layout.previewLayoutRevision = 1;
+  }
+  // The shared preview may already have an older launcher saved in localStorage.
+  // Apply this migration once so removed apps cannot reappear from that stale copy.
+  if (w.id === "ui-test-phone-v2" && layout.previewLayoutRevision < 2) {
+    const removedApps = new Set([
+      "whatsapp",
+      "telegram",
+      "discord",
+      "youtube",
+      "line",
+      "snapchat",
+      "facebook",
+      "reddit",
+      "threads",
+      "kakao",
+    ]);
+    for (const app of layout.apps) {
+      if (removedApps.has(app.id)) {
+        app.installed = false;
+        app.visible = false;
+        app.dock = false;
+        app.folder = "";
+        delete layout.positions[app.id];
+      }
+      if (app.id === "delivery") app.name = "美团外卖";
+    }
+    layout.order = layout.order.filter((id) => !removedApps.has(id));
+    layout.previewLayoutRevision = 2;
   }
   const entries = homeEntries(layout),
     packed = packHome(entries, layout.positions);

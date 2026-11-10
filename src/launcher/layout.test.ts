@@ -117,3 +117,39 @@ it("migrates preview folders once while preserving custom folders and widgets", 
     validateLayout(migrated, w).apps.find((a) => a.id === "wechat")!.folder,
   ).toBe("作者新建文件夹");
 });
+
+
+it("migrates the test preview to remove requested social apps and rename delivery", async () => {
+  const preview = await import("../../stories/test-preview/story.json");
+  const w = compileStory(preview.default).work;
+  const old = defaultLayout(w);
+  old.previewLayoutRevision = 1;
+  const removed = [
+    "whatsapp", "telegram", "discord", "youtube", "line",
+    "snapchat", "facebook", "reddit", "threads", "kakao",
+  ];
+  for (const id of removed) {
+    const app = old.apps.find((a) => a.id === id)!;
+    app.installed = true;
+    app.visible = true;
+    app.dock = id === "whatsapp";
+    app.folder = "旧文件夹";
+    old.order.push(id);
+    old.positions[id] = { page: 0, x: 0, y: 0 };
+  }
+  const delivery = old.apps.find((a) => a.id === "delivery")!;
+  delivery.name = "外卖";
+  delivery.icon = "custom-icon";
+  const migrated = validateLayout(old, w);
+  for (const id of removed) {
+    expect(migrated.apps.find((a) => a.id === id)).toMatchObject({
+      installed: false, visible: false, dock: false, folder: "",
+    });
+    expect(migrated.positions[id]).toBeUndefined();
+    expect(migrated.order).not.toContain(id);
+  }
+  expect(migrated.apps.find((a) => a.id === "delivery")).toMatchObject({
+    name: "美团外卖", icon: "custom-icon",
+  });
+  expect(migrated.previewLayoutRevision).toBe(2);
+});
