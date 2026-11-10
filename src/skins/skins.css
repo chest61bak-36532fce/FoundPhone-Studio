@@ -4130,3 +4130,18 @@
 .catalog-slot[hidden] {
   display: none;
 }
+
+/* Reference-inspired profile and account identity */
+.weibo-profile-reference{display:block;padding:0;background:#fff}
+.weibo-profile-cover{height:150px;padding:16px;display:flex;justify-content:flex-end;align-items:flex-start;color:#fff;font-size:12px;background:linear-gradient(145deg,#d65c51 0%,#f08a71 52%,#b84c49 100%)}
+.weibo-profile-cover span{padding:6px 12px;border-radius:18px;background:#7b34366b}
+.weibo-profile-main{position:relative;margin-top:-28px;padding:0 16px 20px;background:#fff}
+.weibo-profile-main>.catalog-avatar{width:82px;height:82px;border:3px solid #fff;border-radius:50%;background:#25252b;font-size:30px}
+.weibo-profile-main h2{margin:8px 0 4px;font-size:21px;font-weight:650}
+.weibo-profile-main p{margin:5px 0 14px;color:#888;font-size:11px}
+.weibo-profile-stats{display:flex;justify-content:space-between;gap:8px;padding:12px 0;border-bottom:1px solid #eee;color:#888;font-size:10px}
+.weibo-profile-stats span{display:flex;gap:4px;align-items:baseline}
+.weibo-profile-stats b{color:#222;font-size:15px}
+.weibo-profile-badges{margin:12px 0;padding:9px 10px;border-radius:18px;background:#fff3eb;color:#df8150;font-size:10px}
+.weibo-profile-main a{color:#e36b45;font-size:11px;text-decoration:none}
+.netease-user-id{display:block;margin-top:4px;color:#999;font-size:10px}
