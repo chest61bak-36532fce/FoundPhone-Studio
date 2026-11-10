@@ -3,7 +3,7 @@
   "id": "ui-test-phone-v2",
   "title": "捡手机",
   "description": "仅用于界面测试，不含剧情",
-  "revision": 10,
+  "revision": 12,
   "phone": {
     "owner": "朱志鑫",
     "date": "2026-11-19",
@@ -63,8 +63,6 @@
     "settings",
     "weibo",
     "redbook",
-    "bilibili",
-    "alipay",
     "taobao",
     "netease",
     {
@@ -87,35 +85,35 @@
     {
       "id": "zhangji",
       "name": "张极",
-      "phone": "",
+      "phone": "138****5621",
       "avatar": "",
       "bio": ""
     },
     {
       "id": "zuohang",
       "name": "左航",
-      "phone": "",
+      "phone": "186****3074",
       "avatar": "",
       "bio": ""
     },
     {
       "id": "zhangzeyu",
       "name": "张泽禹",
-      "phone": "",
+      "phone": "159****8246",
       "avatar": "",
       "bio": ""
     },
     {
       "id": "suxinhao",
       "name": "苏新皓",
-      "phone": "",
+      "phone": "177****4913",
       "avatar": "",
       "bio": ""
     },
     {
       "id": "mom",
       "name": "妈",
-      "phone": "",
+      "phone": "135****7608",
       "avatar": "",
       "bio": ""
     },
@@ -544,8 +542,8 @@
         "body": "",
         "richText": "",
         "meta": {
-          "phone": "",
-          "number": "",
+          "phone": "138****5621",
+          "number": "138****5621",
           "company": ""
         },
         "time": "2026-09-01 09:00",
@@ -569,8 +567,8 @@
         "body": "",
         "richText": "",
         "meta": {
-          "phone": "",
-          "number": "",
+          "phone": "186****3074",
+          "number": "186****3074",
           "company": ""
         },
         "time": "2026-09-01 09:00",
@@ -594,8 +592,8 @@
         "body": "",
         "richText": "",
         "meta": {
-          "phone": "",
-          "number": "",
+          "phone": "159****8246",
+          "number": "159****8246",
           "company": ""
         },
         "time": "2026-09-01 09:00",
@@ -619,8 +617,8 @@
         "body": "",
         "richText": "",
         "meta": {
-          "phone": "",
-          "number": "",
+          "phone": "177****4913",
+          "number": "177****4913",
           "company": ""
         },
         "time": "2026-09-01 09:00",
@@ -644,8 +642,8 @@
         "body": "",
         "richText": "",
         "meta": {
-          "phone": "",
-          "number": "",
+          "phone": "135****7608",
+          "number": "135****7608",
           "company": ""
         },
         "time": "2026-09-01 09:00",
