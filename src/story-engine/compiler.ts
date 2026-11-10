@@ -58,7 +58,6 @@ export const storySchema = z
           phone: z.string().default(""),
           avatar: z.string().default(""),
           bio: z.string().default(""),
-          phonebook: z.boolean().default(true),
         }),
       )
       .default([]),
@@ -162,10 +161,9 @@ export function compileStory(raw: unknown): { story: Story; work: Work } {
   };
   for (const [app, items] of Object.entries(s.content))
     items.forEach((i, n) => add(app, i, `content.${app}.${n}`));
-  s.contacts.forEach((c, n) => {
+  s.contacts.slice(0, 5).forEach((c, n) => {
     if (c.avatar && !safeMedia(c.avatar))
       fail(`contacts.${n}.avatar`, "无效头像");
-    if (!c.phonebook) return;
     const card = {
       title: c.name,
       body: c.bio,
