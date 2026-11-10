@@ -278,7 +278,7 @@ export function WeChatSkin(p: SkinProps) {
       ) : p.thread ? (
         <>
           <MessageList
-            items={p.items.filter((i) => i.title === p.thread)}
+            items={p.items.filter((i) => i.title === p.thread && i.meta.emptyConversation !== "true")}
             creator={p.creator}
             onItem={p.onItem}
             onRead={p.onRead}
