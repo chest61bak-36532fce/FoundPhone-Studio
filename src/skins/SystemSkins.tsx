@@ -57,7 +57,7 @@ export function PhoneSkin(p: Props) {
             ...i,
             meta: {
               ...i.meta,
-              callCount: callItems.filter((entry) => entry.title === i.title).length,
+              callCount: String(callItems.filter((entry) => entry.title === i.title).length),
             },
           },
         ]),
