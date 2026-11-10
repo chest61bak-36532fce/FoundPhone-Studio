@@ -121,7 +121,7 @@ export function WeiboSkin(p: Props) {
                 <span><b>63</b> 关注</span>
                 <span><b>59.57亿</b> 转评赞</span>
               </div>
-              <div className="weibo-profile-badges">本月互动人数 58万　·　近30天视频播放量 1.64亿</div>
+              <div className="weibo-profile-badges">本月互动人数 58万 · 近30天视频播放量 1.64亿</div>
               <a href="https://weibo.com/u/7449707763" target="_blank" rel="noreferrer">打开参考微博主页 ↗</a>
             </div>
           </div>
