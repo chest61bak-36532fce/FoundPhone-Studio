@@ -3,7 +3,7 @@
   "id": "ui-test-phone-v2",
   "title": "捡手机",
   "description": "仅用于界面测试，不含剧情",
-  "revision": 13,
+  "revision": 14,
   "phone": {
     "owner": "朱志鑫",
     "date": "2026-11-19",
@@ -349,7 +349,8 @@
         "richText": "",
         "meta": {
           "number": "",
-          "status": "呼出"
+          "status": "呼出",
+          "callCount": 3
         },
         "time": "2026-09-14 21:18",
         "sender": "张极",
@@ -373,7 +374,8 @@
         "richText": "",
         "meta": {
           "number": "",
-          "status": "呼入"
+          "status": "呼入",
+          "callCount": 2
         },
         "time": "2026-09-22 08:06",
         "sender": "妈",
@@ -397,7 +399,8 @@
         "richText": "",
         "meta": {
           "number": "",
-          "status": "呼入"
+          "status": "呼入",
+          "callCount": 2
         },
         "time": "2026-10-03 15:42",
         "sender": "助理",
@@ -421,7 +424,8 @@
         "richText": "",
         "meta": {
           "number": "",
-          "status": "未接"
+          "status": "未接",
+          "callCount": 3
         },
         "time": "2026-10-11 23:07",
         "sender": "张极",
@@ -445,7 +449,8 @@
         "richText": "",
         "meta": {
           "number": "",
-          "status": "呼出"
+          "status": "呼出",
+          "callCount": 2
         },
         "time": "2026-10-19 19:26",
         "sender": "妈",
@@ -469,7 +474,8 @@
         "richText": "",
         "meta": {
           "number": "",
-          "status": "呼出"
+          "status": "呼出",
+          "callCount": 2
         },
         "time": "2026-11-05 10:15",
         "sender": "助理",
@@ -493,7 +499,8 @@
         "richText": "",
         "meta": {
           "number": "",
-          "status": "呼入"
+          "status": "呼入",
+          "callCount": 3
         },
         "time": "2026-11-12 22:34",
         "sender": "张极",
@@ -517,7 +524,8 @@
         "richText": "",
         "meta": {
           "number": "",
-          "status": "呼入"
+          "status": "呼入",
+          "callCount": 1
         },
         "time": "2026-11-18 13:27",
         "sender": "快递外卖",
@@ -834,12 +842,20 @@
     ],
     "weibo": [
       {
-        "id": "test-item-weibo",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
+        "id": "weibo-profile-reference",
+        "title": "TOP登陆少年-朱志鑫",
+        "body": "北京时代峰峻旗下登陆少年组合队长 朱志鑫",
+        "sender": "TOP登陆少年-朱志鑫",
+        "kind": "post",
+        "folder": "个人主页",
+        "meta": {
+          "followers": "1042.7万",
+          "following": "63",
+          "likes": "59.57亿",
+          "profileUrl": "https://weibo.com/u/7449707763",
+          "monthlyActive": "本月互动人数58万",
+          "videoViews": "近30天视频播放量1.64亿"
+        }
       }
     ],
     "redbook": [
@@ -874,12 +890,388 @@
     ],
     "netease": [
       {
-        "id": "test-item-netease",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
+        "id": "netease-track-01",
+        "title": "CRUSH (with ASTN & Bren Joy)",
+        "sender": "sunkis, ASTN, Bren Joy",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-02",
+        "title": "summer",
+        "sender": "keshi",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-03",
+        "title": "beside you",
+        "sender": "keshi",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-04",
+        "title": "Leave Em Alone",
+        "sender": "Quality Control, Layton Greene",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-05",
+        "title": "2 soon",
+        "sender": "keshi",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-06",
+        "title": "颜色",
+        "sender": "Gareth.T",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-07",
+        "title": "Summer Too Hot",
+        "sender": "Chris Brown",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-08",
+        "title": "JUST DO YOU",
+        "sender": "ØZI, sunkis",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-09",
+        "title": "Toosie Slide",
+        "sender": "Drake",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-10",
+        "title": "阴天",
+        "sender": "莫文蔚",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-11",
+        "title": "玻璃",
+        "sender": "Gareth.T",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-12",
+        "title": "颜如玉",
+        "sender": "李大奔 BENZO",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-13",
+        "title": "左转灯 (1000 Times +1)",
+        "sender": "派伟俊 / mac ova seas",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-14",
+        "title": "i'm so tired... (Stripped - Live)",
+        "sender": "Lauv / Troye Sivan",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-15",
+        "title": "暴风雨",
+        "sender": "Higher Brothers / HARIKIRI",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-16",
+        "title": "在雨后醒来",
+        "sender": "艾志恒 Asen",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-17",
+        "title": "fake smile",
+        "sender": "Ariana Grande",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-18",
+        "title": "95.south",
+        "sender": "J. Cole",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-19",
+        "title": "Jeremy Scott Freestyle",
+        "sender": "GALI",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-20",
+        "title": "100",
+        "sender": "TizzyT",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-21",
+        "title": "Prospect",
+        "sender": "MAYHEM Beats",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-22",
+        "title": "Tokyo Drift (东京漂移)",
+        "sender": "Teriyaki Boyz",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-23",
+        "title": "Wake Up in the Sky",
+        "sender": "Gucci Mane / Bruno Mars / Kodak Black",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-24",
+        "title": "Stuff",
+        "sender": "Lil Baby / Travis Scott",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-25",
+        "title": "NOKIA",
+        "sender": "Drake",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-26",
+        "title": "Timeless",
+        "sender": "The Weeknd / Playboi Carti",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-27",
+        "title": "Money On Money (feat. Future)",
+        "sender": "Young Thug / Future",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-28",
+        "title": "tv off",
+        "sender": "Kendrick Lamar / Gunplay",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-29",
+        "title": "Legends",
+        "sender": "Quavo / Lil Baby",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-30",
+        "title": "Blue Devil",
+        "sender": "Key Glock",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-31",
+        "title": "Cheap Shot",
+        "sender": "Ella Mai",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
+      },
+      {
+        "id": "netease-track-32",
+        "title": "HOWLING",
+        "sender": "XG",
+        "body": "",
+        "kind": "audio",
+        "folder": "我的歌单",
+        "meta": {
+          "album": "我的歌单"
+        },
+        "media": ""
       }
     ],
     "delivery": [
@@ -1342,7 +1734,8 @@
   },
   "variables": {
     "wechatAccount": "zzx1119",
-    "wechatName": "x"
+    "wechatName": "x",
+    "neteaseUserId": "x"
   },
   "events": [],
   "tests": []
