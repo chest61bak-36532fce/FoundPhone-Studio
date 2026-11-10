@@ -132,7 +132,7 @@ it("migrates the test preview to remove requested social apps and rename deliver
     const app = old.apps.find((a) => a.id === id)!;
     app.installed = true;
     app.visible = true;
-    app.dock = id === "whatsapp";
+    app.dock = false;
     app.folder = "旧文件夹";
     old.order.push(id);
     old.positions[id] = { page: 0, x: 0, y: 0 };
