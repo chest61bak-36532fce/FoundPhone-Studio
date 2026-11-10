@@ -165,6 +165,9 @@ export function PhoneSkin(p: Props) {
 }
 export function ContactsSkin(p: Props) {
   const { q, setQ, items } = useContent(p, "所有联系人");
+  const contacts = items
+    .filter((i) => i.title.toLowerCase().includes(q.toLowerCase()) || i.body.toLowerCase().includes(q.toLowerCase()))
+    .sort((a, b) => a.title.localeCompare(b.title, "zh-CN"));
   return (
     <div className="catalog-skin native-contacts">
       <Header p={p} />
@@ -184,23 +187,24 @@ export function ContactsSkin(p: Props) {
             <small>我的名片</small>
           </span>
         </button>
-        {groupItems(items, "所有联系人").map((g) => (
-          <section key={g}>
-            <h4 className="native-section">{g}</h4>
-            {items
-              .filter((i) => (i.folder || "所有联系人") === g)
-              .sort((a, b) => a.title.localeCompare(b.title, "zh-CN"))
-              .map((i) => (
-                <Row
-                  key={i.id}
-                  item={i}
-                  onItem={p.onItem}
-                  leading={<Avatar name={i.title} />}
-                />
-              ))}
-          </section>
-        ))}
-        <Empty items={items} />
+        <div className="native-contact-layout">
+          <div className="native-contact-list">
+            {contacts.map((i) => (
+              <Row
+                key={i.id}
+                item={i}
+                onItem={p.onItem}
+                leading={<Avatar name={i.title} />}
+              />
+            ))}
+            <Empty items={contacts} />
+          </div>
+          <nav className="native-contact-index" aria-label="联系人字母索引">
+            {"ABCDEFGHIJKLMNOPQRSTUVWXYZ#".split("").map((letter) => (
+              <span key={letter}>{letter}</span>
+            ))}
+          </nav>
+        </div>
       </div>
     </div>
   );
