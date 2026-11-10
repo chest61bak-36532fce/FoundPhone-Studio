@@ -166,15 +166,15 @@ export function WeChatSkin(p: SkinProps) {
   const conversations = [
     ...new Set(
       p.items
-        .filter((i) => !["朋友圈", "我"].includes(i.folder))
+        .filter((i) => !["朋友圈", "我"].includes(i.folder) && i.meta.profileAsset !== "wechat-avatar")
         .map((i) => i.title),
     ),
   ];
   const contacts = [
-    ...new Set(p.items.map((i) => i.sender).filter((s) => s !== "我")),
+    ...new Set(p.items.filter((i) => i.meta.profileAsset !== "wechat-avatar").map((i) => i.sender).filter((s) => s !== "我")),
   ];
   const posts = p.items.filter(
-    (i) => i.folder === "朋友圈" || i.kind === "post",
+    (i) => (i.folder === "朋友圈" || i.kind === "post") && i.meta.profileAsset !== "wechat-avatar",
   );
   return (
     <div
@@ -419,7 +419,7 @@ export function WeChatSkin(p: SkinProps) {
           ) : (
             <>
               <div className="wx-profile">
-                <Avatar name="x" />
+                <Avatar name="x" src={p.items.find((i) => i.meta.profileAsset === "wechat-avatar")?.avatar} />
                 <div>
                   <h2>x</h2>
                   <small>微信号：zzx1119</small>
