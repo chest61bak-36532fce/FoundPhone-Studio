@@ -3,9 +3,9 @@
   "id": "ui-test-phone-v2",
   "title": "捡手机",
   "description": "仅用于界面测试，不含剧情",
-  "revision": 6,
+  "revision": 7,
   "phone": {
-    "owner": "机主",
+    "owner": "朱志鑫",
     "date": "2026-11-19",
     "time": "01:35",
     "battery": 94,
@@ -61,7 +61,6 @@
     "find",
     "calculator",
     "settings",
-    "qq",
     "weibo",
     "redbook",
     "bilibili",
@@ -77,87 +76,270 @@
       "folder": "",
       "icon": ""
     },
-    "forum",
     "instagram",
     "tiktok",
     "twitter",
-    "messenger",
     "spotify",
     "netflix",
     "pinterest"
   ],
   "contacts": [
     {
-      "id": "test-contact",
-      "name": "测试联系人",
+      "id": "zhangji",
+      "name": "张极",
       "phone": "",
-      "bio": "这是一条测试内容。"
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "zuohang",
+      "name": "左航",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "zhangzeyu",
+      "name": "张泽禹",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "suxinhao",
+      "name": "苏新皓",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "mom",
+      "name": "妈",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "assistant",
+      "name": "助理",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "zhangjunhao",
+      "name": "张峻豪",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "yuyuhan",
+      "name": "余宇涵",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "muzhicheng",
+      "name": "穆祉丞",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "zhangzimo",
+      "name": "张子墨",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "huangshuo",
+      "name": "黄朔",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "feige",
+      "name": "飞哥",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "lifei",
+      "name": "李飞",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "boss",
+      "name": "老板",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
     }
   ],
   "chats": [
     {
-      "id": "test-chat-messages",
-      "app": "messages",
-      "title": "测试会话",
-      "participants": [
-        "owner",
-        "test-contact"
-      ],
-      "messages": [
-        {
-          "id": "test-message-messages",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
-    },
-    {
-      "id": "test-chat-wechat",
+      "id": "wechat-zhangji",
       "app": "wechat",
-      "title": "测试会话",
+      "title": "张极",
       "participants": [
         "owner",
-        "test-contact"
+        "zhangji"
       ],
-      "messages": [
-        {
-          "id": "test-message-wechat",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
+      "messages": []
     },
     {
-      "id": "test-chat-qq",
-      "app": "qq",
-      "title": "测试会话",
+      "id": "wechat-zuohang",
+      "app": "wechat",
+      "title": "左航",
       "participants": [
         "owner",
-        "test-contact"
+        "zuohang"
       ],
-      "messages": [
-        {
-          "id": "test-message-qq",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
+      "messages": []
     },
     {
-      "id": "test-chat-messenger",
-      "app": "messenger",
-      "title": "测试会话",
+      "id": "wechat-zhangzeyu",
+      "app": "wechat",
+      "title": "张泽禹",
       "participants": [
         "owner",
-        "test-contact"
+        "zhangzeyu"
       ],
-      "messages": [
-        {
-          "id": "test-message-messenger",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
+      "messages": []
+    },
+    {
+      "id": "wechat-suxinhao",
+      "app": "wechat",
+      "title": "苏新皓",
+      "participants": [
+        "owner",
+        "suxinhao"
+      ],
+      "messages": []
+    },
+    {
+      "id": "wechat-mom",
+      "app": "wechat",
+      "title": "妈",
+      "participants": [
+        "owner",
+        "mom"
+      ],
+      "messages": []
+    },
+    {
+      "id": "wechat-assistant",
+      "app": "wechat",
+      "title": "助理",
+      "participants": [
+        "owner",
+        "assistant"
+      ],
+      "messages": []
+    },
+    {
+      "id": "wechat-zhangjunhao",
+      "app": "wechat",
+      "title": "张峻豪",
+      "participants": [
+        "owner",
+        "zhangjunhao"
+      ],
+      "messages": []
+    },
+    {
+      "id": "wechat-yuyuhan",
+      "app": "wechat",
+      "title": "余宇涵",
+      "participants": [
+        "owner",
+        "yuyuhan"
+      ],
+      "messages": []
+    },
+    {
+      "id": "wechat-muzhicheng",
+      "app": "wechat",
+      "title": "穆祉丞",
+      "participants": [
+        "owner",
+        "muzhicheng"
+      ],
+      "messages": []
+    },
+    {
+      "id": "wechat-zhangzimo",
+      "app": "wechat",
+      "title": "张子墨",
+      "participants": [
+        "owner",
+        "zhangzimo"
+      ],
+      "messages": []
+    },
+    {
+      "id": "wechat-huangshuo",
+      "app": "wechat",
+      "title": "黄朔",
+      "participants": [
+        "owner",
+        "huangshuo"
+      ],
+      "messages": []
+    },
+    {
+      "id": "wechat-feige",
+      "app": "wechat",
+      "title": "飞哥",
+      "participants": [
+        "owner",
+        "feige"
+      ],
+      "messages": []
+    },
+    {
+      "id": "wechat-lifei",
+      "app": "wechat",
+      "title": "李飞",
+      "participants": [
+        "owner",
+        "lifei"
+      ],
+      "messages": []
+    },
+    {
+      "id": "wechat-group-top",
+      "app": "wechat",
+      "title": "top",
+      "participants": [
+        "owner",
+        "zhangji",
+        "zuohang",
+        "zhangzeyu",
+        "suxinhao",
+        "boss"
+      ],
+      "messages": []
+    },
+    {
+      "id": "wechat-group-eagle",
+      "app": "wechat",
+      "title": "eagle",
+      "participants": [
+        "owner",
+        "zhangji",
+        "zuohang",
+        "zhangzeyu",
+        "suxinhao"
+      ],
+      "messages": []
     }
   ],
   "content": {
@@ -509,7 +691,10 @@
       }
     ]
   },
-  "variables": {},
+  "variables": {
+    "wechatAccount": "zzx1119",
+    "wechatName": "x"
+  },
   "events": [],
   "tests": []
 }

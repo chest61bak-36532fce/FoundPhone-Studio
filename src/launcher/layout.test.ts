@@ -153,3 +153,29 @@ it("migrates the test preview to remove requested social apps and rename deliver
   });
   expect(migrated.previewLayoutRevision).toBe(2);
 });
+
+it("migrates the test preview to uninstall QQ, forum, and Messenger", async () => {
+  const preview = await import("../../stories/test-preview/story.json");
+  const w = compileStory(preview.default).work;
+  const old = defaultLayout(w);
+  old.previewLayoutRevision = 2;
+  const removed = ["qq", "forum", "messenger"];
+  for (const id of removed) {
+    const app = old.apps.find((a) => a.id === id)!;
+    app.installed = true;
+    app.visible = true;
+    app.dock = false;
+    app.folder = "旧文件夹";
+    old.order.push(id);
+    old.positions[id] = { page: 0, x: 0, y: 0 };
+  }
+  const migrated = validateLayout(old, w);
+  for (const id of removed) {
+    expect(migrated.apps.find((a) => a.id === id)).toMatchObject({
+      installed: false, visible: false, dock: false, folder: "",
+    });
+    expect(migrated.positions[id]).toBeUndefined();
+    expect(migrated.order).not.toContain(id);
+  }
+  expect(migrated.previewLayoutRevision).toBe(3);
+});

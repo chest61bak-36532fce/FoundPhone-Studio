@@ -146,6 +146,21 @@ export function validateLayout(raw: unknown, input: Work) {
     layout.order = layout.order.filter((id) => !removedApps.has(id));
     layout.previewLayoutRevision = 2;
   }
+  // Remove the three apps requested for this preview, including stale local layouts.
+  if (w.id === "ui-test-phone-v2" && layout.previewLayoutRevision < 3) {
+    const removedApps = new Set(["qq", "forum", "messenger"]);
+    for (const app of layout.apps) {
+      if (removedApps.has(app.id)) {
+        app.installed = false;
+        app.visible = false;
+        app.dock = false;
+        app.folder = "";
+        delete layout.positions[app.id];
+      }
+    }
+    layout.order = layout.order.filter((id) => !removedApps.has(id));
+    layout.previewLayoutRevision = 3;
+  }
   const entries = homeEntries(layout),
     packed = packHome(entries, layout.positions);
   for (const entry of entries) {
