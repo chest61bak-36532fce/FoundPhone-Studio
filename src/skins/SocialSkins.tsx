@@ -91,7 +91,9 @@ function WeiboActions({ p, item }: { p: Props; item: Item }) {
 export function WeiboSkin(p: Props) {
   const { tab, setTab, q, setQ, items } = useContent(p, "关注");
   const [feed, setFeed] = useState("全部");
-  const list = feed === "全部" ? items : items.filter((i) => i.folder === feed);
+  const profileAvatar = p.items.find((i) => i.meta.profileAsset === "weibo-avatar")?.avatar;
+  const feedItems = items.filter((i) => i.meta.profileAsset !== "weibo-avatar");
+  const list = feed === "全部" ? feedItems : feedItems.filter((i) => i.folder === feed);
   return (
     <div className="catalog-skin weibo-ui">
       <Header p={p} />
@@ -113,7 +115,7 @@ export function WeiboSkin(p: Props) {
               <span>访问量 1132万+</span>
             </div>
             <div className="weibo-profile-main">
-              <Avatar name="朱" round />
+              <Avatar name="朱" src={profileAvatar} round />
               <h2>TOP登陆少年-朱志鑫</h2>
               <p>北京时代峰峻旗下登陆少年组合队长 朱志鑫</p>
               <div className="weibo-profile-stats">
