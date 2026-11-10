@@ -4145,3 +4145,63 @@
 .weibo-profile-badges{margin:12px 0;padding:9px 10px;border-radius:18px;background:#fff3eb;color:#df8150;font-size:10px}
 .weibo-profile-main a{color:#e36b45;font-size:11px;text-decoration:none}
 .netease-user-id{display:block;margin-top:4px;color:#999;font-size:10px}
+
+
+/* Native contacts: compact circular-avatar directory inspired by the reference. */
+.native-contacts .contact-self {
+  display: none;
+}
+.native-contact-layout {
+  display: flex;
+  align-items: stretch;
+  min-height: 100%;
+}
+.native-contact-list {
+  flex: 1;
+  min-width: 0;
+}
+.native-contacts .catalog-row {
+  min-height: 72px;
+  padding: 11px 14px;
+  gap: 13px;
+  border-bottom: 1px solid #e6e6e8;
+}
+.native-contacts .catalog-row .catalog-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #b5c9e5, #7889bd);
+  font-size: 19px;
+  font-weight: 600;
+}
+.native-contacts .catalog-row > span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.native-contacts .catalog-row strong {
+  font-size: 15px;
+  color: #111;
+}
+.native-contacts .catalog-row p {
+  margin: 4px 0 0;
+  color: #929292;
+  font-size: 11px;
+}
+.native-contacts .catalog-row small,
+.native-contacts .catalog-row > svg {
+  display: none;
+}
+.native-contact-index {
+  width: 17px;
+  flex: 0 0 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 0;
+  color: #1688d9;
+  font-size: 10px;
+  font-weight: 600;
+}
