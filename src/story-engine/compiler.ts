@@ -215,6 +215,25 @@ export function compileStory(raw: unknown): { story: Story; work: Work } {
         `chats.${n}.messages.${j}`,
       );
     });
+    if (chat.messages.length === 0) {
+      add(
+        chat.app,
+        {
+          id: chat.id + "-conversation",
+          title: chat.title,
+          body: "",
+          sender: "",
+          time: s.phone.date + " " + (s.phone.time || "21:41"),
+          meta: {
+            conversationId: chat.id,
+            participants: chat.participants.join(","),
+            emptyConversation: "true",
+          },
+          read: true,
+        },
+        `chats.${n}.emptyConversation`,
+      );
+    }
   });
   const nodes = s.events.map((e, n) => {
     unique(e.id, `events.${n}.id`);
