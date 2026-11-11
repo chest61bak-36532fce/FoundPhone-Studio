@@ -110,21 +110,10 @@ export function WeiboSkin(p: Props) {
       </div>
       <div className="catalog-scroll">
         {tab === "我" ? (
-          <div className="weibo-profile weibo-profile-reference">
-            <div className="weibo-profile-cover">
-              <span>访问量 1132万+</span>
-            </div>
+          <div className="weibo-profile">
             <div className="weibo-profile-main">
-              <Avatar name="朱" src={profileAvatar} round />
-              <h2>TOP登陆少年-朱志鑫</h2>
-              <p>北京时代峰峻旗下登陆少年组合队长 朱志鑫</p>
-              <div className="weibo-profile-stats">
-                <span><b>1042.7万</b> 粉丝</span>
-                <span><b>63</b> 关注</span>
-                <span><b>59.57亿</b> 转评赞</span>
-              </div>
-              <div className="weibo-profile-badges">本月互动人数 58万 · 近30天视频播放量 1.64亿</div>
-              <a href="https://weibo.com/u/7449707763" target="_blank" rel="noreferrer">打开参考微博主页 ↗</a>
+              <Avatar name="我" src={profileAvatar} round />
+              <h2>我的微博</h2>
             </div>
           </div>
         ) : (

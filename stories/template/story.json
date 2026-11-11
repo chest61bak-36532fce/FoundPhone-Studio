@@ -842,28 +842,12 @@
     ],
     "weibo": [
       {
-        "id": "weibo-profile-reference",
-        "title": "TOP登陆少年-朱志鑫",
-        "body": "北京时代峰峻旗下登陆少年组合队长 朱志鑫",
-        "sender": "TOP登陆少年-朱志鑫",
-        "kind": "post",
-        "folder": "个人主页",
-        "meta": {
-          "followers": "1042.7万",
-          "following": "63",
-          "likes": "59.57亿",
-          "profileUrl": "https://weibo.com/u/7449707763",
-          "monthlyActive": "本月互动人数58万",
-          "videoViews": "近30天视频播放量1.64亿"
-        }
-      },
-      {
         "id": "weibo-profile-avatar",
         "title": "微博头像",
         "body": "",
         "sender": "TOP登陆少年-朱志鑫",
         "time": "2026-11-10 12:00",
-        "avatar": "/FoundPhone-Studio/wechat-avatar.jpg",
+        "avatar": "/FoundPhone-Studio/weibo-avatar.jpg",
         "folder": "资料",
         "kind": "text",
         "meta": {
