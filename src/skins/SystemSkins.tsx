@@ -184,9 +184,12 @@ export function PhoneSkin(p: Props) {
 }
 export function ContactsSkin(p: Props) {
   const { q, setQ, items } = useContent(p, "所有联系人");
-  const contacts = items
-    .filter((i) => i.title.toLowerCase().includes(q.toLowerCase()) || i.body.toLowerCase().includes(q.toLowerCase()))
-    .sort((a, b) => a.title.localeCompare(b.title, "zh-CN"));
+  const contacts = [...new Map(
+    items
+      .filter((i) => i.title.toLowerCase().includes(q.toLowerCase()) || i.body.toLowerCase().includes(q.toLowerCase()))
+      .sort((a, b) => a.title.localeCompare(b.title, "zh-CN"))
+      .map((item) => [item.title.trim(), item]),
+  ).values()];
   return (
     <div className="catalog-skin native-contacts">
       <Header p={p} />

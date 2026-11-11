@@ -4313,3 +4313,33 @@
   object-fit: cover !important;
   border-radius: 50% !important;
 }
+
+
+/* Contacts app (separate from Phone app): enforce P2 circular contact portraits. */
+.catalog-skin.native-contacts .native-contact-list > .catalog-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+.catalog-skin.native-contacts .native-contact-list > .catalog-row > .catalog-avatar,
+.catalog-skin.native-contacts .native-contact-list > .catalog-row > .catalog-avatar.round {
+  display: grid !important;
+  box-sizing: border-box !important;
+  width: 54px !important;
+  min-width: 54px !important;
+  max-width: 54px !important;
+  height: 54px !important;
+  min-height: 54px !important;
+  max-height: 54px !important;
+  flex: 0 0 54px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+.catalog-skin.native-contacts .native-contact-list > .catalog-row > .catalog-avatar img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
