@@ -4260,3 +4260,81 @@
   font-size: 9px;
   line-height: 1;
 }
+
+
+/* Own Weibo profile: retain the personal page without copied reference-account data. */
+.weibo-own-profile {
+  display: block;
+  padding: 0;
+  background: #fff;
+}
+.weibo-own-cover {
+  height: 112px;
+  background: linear-gradient(135deg, #25252b 0%, #45434a 48%, #b7a9a0 100%);
+}
+.weibo-own-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 82px;
+  padding: 0 16px 12px;
+  background: #fff;
+}
+.weibo-own-main > .catalog-avatar {
+  width: 72px;
+  height: 72px;
+  margin-top: -28px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #25252b;
+  font-size: 24px;
+}
+.weibo-own-identity {
+  min-width: 0;
+  flex: 1;
+}
+.weibo-own-identity h2 {
+  margin: 0 0 5px;
+  color: #222;
+  font-size: 16px;
+  font-weight: 650;
+}
+.weibo-own-identity p {
+  margin: 0;
+  color: #999;
+  font-size: 11px;
+}
+.weibo-own-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: #999;
+  font-size: 10px;
+}
+.weibo-own-count b {
+  color: #222;
+  font-size: 16px;
+}
+.weibo-own-tabs {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #eee;
+  color: #777;
+  font-size: 13px;
+}
+.weibo-own-tabs span {
+  padding: 12px 20px;
+}
+.weibo-own-tabs .active {
+  color: #222;
+  border-bottom: 2px solid #e68b55;
+  font-weight: 650;
+}
+.weibo-own-feed-title {
+  padding: 14px 16px 8px;
+  color: #555;
+  font-size: 13px;
+  font-weight: 650;
+}
