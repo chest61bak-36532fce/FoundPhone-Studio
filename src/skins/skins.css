@@ -4260,3 +4260,27 @@
   font-size: 9px;
   line-height: 1;
 }
+
+/* Weibo personal homepage header uses the user's repository cover image. */
+.weibo-profile-cover {
+  height: 178px;
+  background-image: url("/FoundPhone-Studio/a7d648823947f7125649d3b961e7b173.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.weibo-profile-cover span { opacity: .0; }
+.weibo-profile-main { padding: 0 18px 16px; }
+.weibo-profile-main > .catalog-avatar {
+  width: 88px; height: 88px; margin-top: -38px;
+  border: 3px solid #fff; border-radius: 50%;
+  overflow: hidden; background: #25252b;
+}
+.weibo-profile-main h2 { margin: 7px 0 3px; font-size: 21px; font-weight: 650; }
+.weibo-profile-main p { margin: 0 0 10px; color: #888; font-size: 12px; }
+.weibo-profile-stats { display:flex; justify-content:space-between; gap:10px; padding:12px 0; border-bottom:1px solid #eee; color:#888; font-size:12px; }
+.weibo-profile-stats span { display:flex; gap:5px; align-items:baseline; }
+.weibo-profile-stats b { color:#222; font-size:18px; }
+.weibo-profile-tabs { display:flex; justify-content:space-around; gap:12px; overflow:auto; white-space:nowrap; padding:12px 10px; border-bottom:1px solid #eee; color:#888; font-size:14px; }
+.weibo-profile-tabs .active { color:#222; font-weight:650; border-bottom:3px solid #f26b21; }
+.weibo-profile-feed-heading { padding:13px 16px; background:#f6f6f6; color:#777; font-size:13px; }

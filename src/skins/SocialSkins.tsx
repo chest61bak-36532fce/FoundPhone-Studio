@@ -110,11 +110,24 @@ export function WeiboSkin(p: Props) {
       </div>
       <div className="catalog-scroll">
         {tab === "我" ? (
-          <div className="weibo-profile">
-            <div className="weibo-profile-main">
-              <Avatar name="我" src={profileAvatar} round />
-              <h2>我的微博</h2>
+          <div className="weibo-profile-reference">
+            <div className="weibo-profile-cover">
+              <span>访问量</span>
             </div>
+            <div className="weibo-profile-main">
+              <Avatar name="朱" src={profileAvatar || "/FoundPhone-Studio/weibo-avatar.jpg"} round />
+              <h2>TOP登陆少年-朱志鑫</h2>
+              <p>微博个人主页</p>
+              <div className="weibo-profile-stats">
+                <span><b>—</b> 粉丝</span>
+                <span><b>—</b> 关注</span>
+                <span><b>—</b> 转评赞</span>
+              </div>
+            </div>
+            <div className="weibo-profile-tabs">
+              <span>动态</span><span className="active">微博</span><span>视频</span><span>超话</span><span>音乐</span>
+            </div>
+            <div className="weibo-profile-feed-heading">全部微博</div>
           </div>
         ) : (
           <>
