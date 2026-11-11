@@ -4284,3 +4284,8 @@
 .weibo-profile-tabs { display:flex; justify-content:space-around; gap:12px; overflow:auto; white-space:nowrap; padding:12px 10px; border-bottom:1px solid #eee; color:#888; font-size:14px; }
 .weibo-profile-tabs .active { color:#222; font-weight:650; border-bottom:3px solid #f26b21; }
 .weibo-profile-feed-heading { padding:13px 16px; background:#f6f6f6; color:#777; font-size:13px; }
+
+.weibo-pinned-label { display:inline-flex; align-items:center; gap:5px; margin:0 0 10px; padding:5px 10px; color:#d98224; background:#fff4d8; border-radius:0 0 12px 0; font-size:12px; font-weight:700; }
+.weibo-photo-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px; margin-top:12px; }
+.weibo-photo-grid img { display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:5px; }
+.weibo-post:has(.weibo-pinned-label) .social-body p { white-space:pre-line; line-height:1.65; text-align:left; }

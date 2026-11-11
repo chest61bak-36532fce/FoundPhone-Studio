@@ -93,7 +93,9 @@ export function WeiboSkin(p: Props) {
   const [feed, setFeed] = useState("全部");
   const profileAvatar = p.items.find((i) => i.meta.profileAsset === "weibo-avatar")?.avatar;
   const feedItems = items.filter((i) => i.meta.profileAsset !== "weibo-avatar");
-  const list = feed === "全部" ? feedItems : feedItems.filter((i) => i.folder === feed);
+  const list = (feed === "全部" ? feedItems : feedItems.filter((i) => i.folder === feed))
+    .slice()
+    .sort((a, b) => Number(b.meta.pinned === "true") - Number(a.meta.pinned === "true"));
   return (
     <div className="catalog-skin weibo-ui">
       <Header p={p} />
@@ -147,8 +149,15 @@ export function WeiboSkin(p: Props) {
           <article className="weibo-post" key={i.id}>
             <PostHeader p={p} item={i} />
             <button className="social-body" onClick={() => p.onItem(i)}>
+              {i.meta.pinned === "true" && <div className="weibo-pinned-label">♛ 置顶</div>}
               <p>{i.body}</p>
-              {i.media && <Media item={i} />}
+              {i.meta.gallery ? (
+                <div className="weibo-photo-grid">
+                  {i.meta.gallery.split("|").filter(Boolean).map((src, index) => (
+                    <img key={src} src={src} alt={`微博配图 ${index + 1}`} loading="lazy" />
+                  ))}
+                </div>
+              ) : i.media ? <Media item={i} /> : null}
             </button>
             <WeiboActions p={p} item={i} />
           </article>
