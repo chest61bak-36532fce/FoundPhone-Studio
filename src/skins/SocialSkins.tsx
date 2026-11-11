@@ -1,3 +1,14 @@
+import wbCover from "../../a7d648823947f7125649d3b961e7b173.jpg";
+import wbPhoto1 from "../../2325a5fd973625cdb31c01d9bb3cd7b4.jpg";
+import wbPhoto2 from "../../3d1b01eb05ed023322edf01994643d94.jpg";
+import wbPhoto3 from "../../4cdf04bac00a8083b4e2c1c2a29f93bf.jpg";
+import wbPhoto4 from "../../6422150c93743f5683f89c20f13ebd68.jpg";
+import wbPhoto5 from "../../6dfa211ccd9fca2e3699e18c3839a64f.jpg";
+import wbPhoto6 from "../../93c64b161c812d3400db0a3606fd0ebc.jpg";
+import wbPhoto7 from "../../e2c385e54ef206b6c606debb0d362b22.jpg";
+import wbPhoto8 from "../../f990fdac1b2e76e477111ff9f4b542b1.jpg";
+import wbPhoto9 from "../../fb3a53d0c951a03705baff2f515c1d9a.jpg";
+const wb1Gallery = [wbPhoto1, wbPhoto2, wbPhoto3, wbPhoto4, wbPhoto5, wbPhoto6, wbPhoto7, wbPhoto8, wbPhoto9];
 import { useSkinState } from "../skinState";
 import {
   ArrowDown,
@@ -113,7 +124,7 @@ export function WeiboSkin(p: Props) {
       <div className="catalog-scroll">
         {tab === "我" ? (
           <div className="weibo-profile-reference">
-            <div className="weibo-profile-cover">
+            <div className="weibo-profile-cover" style={{ backgroundImage: `url(${wbCover})` }}>
               <span>访问量</span>
             </div>
             <div className="weibo-profile-main">
@@ -151,9 +162,9 @@ export function WeiboSkin(p: Props) {
             <button className="social-body" onClick={() => p.onItem(i)}>
               {i.meta.pinned === "true" && <div className="weibo-pinned-label">♛ 置顶</div>}
               <p>{i.body}</p>
-              {i.meta.gallery ? (
+              {i.meta.gallery === "wb1" ? (
                 <div className="weibo-photo-grid">
-                  {i.meta.gallery.split("|").filter(Boolean).map((src, index) => (
+                  {wb1Gallery.map((src, index) => (
                     <img key={src} src={src} alt={`微博配图 ${index + 1}`} loading="lazy" />
                   ))}
                 </div>

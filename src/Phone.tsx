@@ -290,7 +290,7 @@ function PhoneRuntime({
   useEffect(() => {
     if (app && !work.apps.some((a) => a.id === app && a.installed)) setApp("");
   }, [app, work.apps]);
-  const displayTime = creator ? work.phone.time : s.time || work.phone.time;
+  const displayTime = work.phone.time || "01:35";
   const plugin = getApp(app);
   useEffect(() => {
     const count = s.notifications.length;

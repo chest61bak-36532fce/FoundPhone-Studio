@@ -4264,7 +4264,6 @@
 /* Weibo personal homepage header uses the user's repository cover image. */
 .weibo-profile-cover {
   height: 178px;
-  background-image: url("/FoundPhone-Studio/a7d648823947f7125649d3b961e7b173.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
