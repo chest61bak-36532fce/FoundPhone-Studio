@@ -4288,3 +4288,28 @@
 .weibo-photo-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px; margin-top:12px; }
 .weibo-photo-grid img { display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:5px; }
 .weibo-post:has(.weibo-pinned-label) .social-body p { white-space:pre-line; line-height:1.65; text-align:left; }
+
+
+/* Final P2 contact avatar override: keep each directory avatar perfectly circular. */
+.catalog-skin.native-phone.native-contacts .native-contact-layout .native-contact-list > .catalog-row > .catalog-avatar,
+.catalog-skin.native-phone.native-contacts .native-contact-layout .native-contact-list > .catalog-row > .catalog-avatar.round {
+  display: grid !important;
+  box-sizing: border-box !important;
+  width: 52px !important;
+  min-width: 52px !important;
+  max-width: 52px !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  flex: 0 0 52px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+.catalog-skin.native-phone.native-contacts .native-contact-layout .native-contact-list > .catalog-row > .catalog-avatar img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
