@@ -4932,3 +4932,105 @@ label {
 .wallpaper-weeknd .wallpaper-orb {
   display: none;
 }
+
+/* WeChat typography system: shared by chat list, thread view and address book. */
+.wechat-ui {
+  --wx-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --wx-text-primary: #171717;
+  --wx-text-secondary: #999;
+  --wx-text-tertiary: #aaa;
+  --wx-font-title: 16px;
+  --wx-font-contact: 14px;
+  --wx-font-message: 14px;
+  --wx-font-secondary: 11px;
+  --wx-font-meta: 10px;
+  --wx-weight-regular: 400;
+  --wx-weight-medium: 500;
+  --wx-weight-semibold: 600;
+  font-family: var(--wx-font-family);
+  color: var(--wx-text-primary);
+  letter-spacing: 0;
+}
+
+.wechat-ui button,
+.wechat-ui input,
+.wechat-ui textarea,
+.wechat-ui time {
+  font-family: var(--wx-font-family);
+  letter-spacing: 0;
+}
+
+.wechat-ui .wx-nav strong {
+  font-size: var(--wx-font-title);
+  font-weight: var(--wx-weight-semibold);
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.wechat-ui .wx-chat-row strong,
+.wechat-ui .wx-contact {
+  color: var(--wx-text-primary);
+  font-size: var(--wx-font-contact);
+  font-weight: var(--wx-weight-medium);
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.wechat-ui .wx-chat-row p {
+  color: var(--wx-text-secondary);
+  font-size: var(--wx-font-secondary);
+  font-weight: var(--wx-weight-regular);
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.wechat-ui .wx-chat-row time,
+.wechat-ui .skin-date,
+.wechat-ui .skin-bubble > small {
+  color: var(--wx-text-tertiary);
+  font-size: var(--wx-font-meta);
+  font-weight: var(--wx-weight-regular);
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.wechat-ui .skin-bubble {
+  color: var(--wx-text-primary);
+  font-size: var(--wx-font-message);
+  font-weight: var(--wx-weight-regular);
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.wechat-ui .wx-search input,
+.wechat-ui .skin-compose > button {
+  color: var(--wx-text-primary);
+  font-size: var(--wx-font-message);
+  font-weight: var(--wx-weight-regular);
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.wechat-ui .wx-search input::placeholder,
+.wechat-ui .skin-compose > button::placeholder {
+  color: var(--wx-text-secondary);
+  font: inherit;
+  opacity: 1;
+}
+
+.wechat-ui .wx-section-label {
+  color: #888;
+  font-size: var(--wx-font-secondary);
+  font-weight: var(--wx-weight-regular);
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.wechat-ui .wx-bottom button span {
+  font-family: var(--wx-font-family);
+  font-size: var(--wx-font-meta);
+  font-weight: var(--wx-weight-regular);
+  line-height: 1.3;
+}
+
