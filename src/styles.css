@@ -4941,7 +4941,7 @@ label {
   --wx-text-secondary: #999;
   --wx-text-tertiary: #aaa;
   --wx-font-title: 16px;
-  --wx-font-contact: 14px;
+  --wx-font-contact: 16px;
   --wx-font-message: 14px;
   --wx-font-secondary: 11px;
   --wx-font-meta: 10px;
@@ -4968,9 +4968,11 @@ label {
   letter-spacing: 0;
 }
 
-.wechat-ui .wx-chat-row strong,
-.wechat-ui .wx-contact {
+.wechat-ui .wx-chat-row .wx-contact-name,
+.wechat-ui .wx-contact .wx-contact-name {
+  display: inline-block;
   color: var(--wx-text-primary);
+  font-family: var(--wx-font-family);
   font-size: var(--wx-font-contact);
   font-weight: var(--wx-weight-medium);
   line-height: 1.45;
