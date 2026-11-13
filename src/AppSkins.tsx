@@ -359,7 +359,7 @@ export function WeChatSkin(p: SkinProps) {
                           )}
                       </span>
                       <div>
-                        <strong>{t}</strong>
+                        <strong className="wx-contact-name">{t}</strong>
                         <p>{last.body}</p>
                       </div>
                       <time>{last.time.slice(-5)}</time>
@@ -387,7 +387,7 @@ export function WeChatSkin(p: SkinProps) {
                     name={c}
                     src={p.items.find((i) => i.meta.profileAsset === "wechat-avatar")?.avatar || p.items.find((i) => i.sender === c)?.avatar}
                   />
-                  {c}
+                  <span className="wx-contact-name">{c}</span>
                 </button>
               ))}
             </>
