@@ -3,13 +3,40 @@ import { motion } from "motion/react";
 import { X } from "lucide-react";
 import { AppArtwork } from "./AppArtwork";
 import type { Work } from "./schema";
-export function notificationContent(text: string, apps: Work["apps"]) {
+export type NotificationContent = {
+  appId: string;
+  appName: string;
+  title: string;
+  body: string;
+  threadId?: string;
+  threadTitle?: string;
+};
+export function notificationContent(text: string, apps: Work["apps"]): NotificationContent {
+  try {
+    const value = JSON.parse(text) as Partial<NotificationContent> & {
+      kind?: string;
+      contactName?: string;
+    };
+    if (value.kind === "app-notification" && typeof value.appId === "string") {
+      return {
+        appId: value.appId,
+        appName: value.appName || apps.find((a) => a.id === value.appId)?.name || value.appId,
+        title: value.contactName || value.title || value.appName || "通知",
+        body: value.body || "",
+        threadId: value.threadId,
+        threadTitle: value.threadTitle,
+      };
+    }
+  } catch {
+    // Older story notifications are plain text and remain supported.
+  }
   const separator = text.search(/[:：]/);
   const sender = separator > 0 ? text.slice(0, separator) : "信息";
   const app = apps.find((a) => a.name === sender);
   return {
     title: sender,
-    body: separator > 0 ? text.slice(separator + 1) : text,
+    appName: sender,
+    body: separator > 0 ? text.slice(separator + 1).trim() : text,
     appId: app?.id ?? "messages",
   };
 }
@@ -22,7 +49,7 @@ export function SystemNotifications({
 }: {
   notices: string[];
   apps: Work["apps"];
-  onOpen: () => void;
+  onOpen: (notice: NotificationContent) => void;
   onDismiss: (index: number) => void;
   compact?: boolean;
 }) {
@@ -53,13 +80,17 @@ export function SystemNotifications({
                 if (info.offset.x < -80) onDismiss(index);
               }}
             >
-              <button className="notice-open" onClick={onOpen}>
+              <button
+                className="notice-open"
+                aria-label={`打开${n.appName}中${n.title}的通知`}
+                onClick={() => onOpen(n)}
+              >
                 <span className="notice-app-art">
                   <AppArtwork id={n.appId} />
                 </span>
                 <span className="notice-copy">
-                  <strong>{n.title}</strong>
-                  <span>{n.body}</span>
+                  <strong>{n.appName}</strong>
+                  <span>{n.title !== n.appName ? <b>{n.title}：</b> : null}{n.body}</span>
                 </span>
                 <time>现在</time>
               </button>

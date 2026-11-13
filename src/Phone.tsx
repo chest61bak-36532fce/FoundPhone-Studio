@@ -9,6 +9,7 @@ import "./ios/details.css";
 import {
   SystemNotifications,
   notificationContent,
+  type NotificationContent,
 } from "./SystemNotifications";
 import {
   readLauncherOrigin,
@@ -133,6 +134,8 @@ function PhoneRuntime({
   onRuntime?: (s: Runtime) => void;
 }) {
   const [app, setApp] = useState("");
+  const [threadTarget, setThreadTarget] = useState("");
+  const pendingNotification = useRef<NotificationContent | null>(null);
   const [homeRequest, setHomeRequest] = useState(0);
   const [locked, setLocked] = useState(!creator);
   const [pinOpen, setPinOpen] = useState(false);
@@ -265,8 +268,9 @@ function PhoneRuntime({
     for (const id of appSnapshots.current.keys())
       if (!recent.includes(id) && id !== app) appSnapshots.current.delete(id);
   };
-  const open = (id: string) => {
+  const open = (id: string, thread = "") => {
     if (!work.apps.some((a) => a.id === id && a.installed)) return;
+    setThreadTarget(thread);
     setApp(id);
     setKeyboard(false);
     setRecent((v) => [id, ...v.filter((a) => a !== id)].slice(0, 8));
@@ -277,11 +281,60 @@ function PhoneRuntime({
   };
   const installedApps = work.apps.filter((a) => a.installed);
   const apps = installedApps.filter((a) => a.visible);
+  const routeNotification = (notice: NotificationContent) => {
+    const target = work.apps.find((a) => a.id === notice.appId && a.installed);
+    if (!target) return;
+    let thread = "";
+    if (notice.threadId) {
+      const conversation = [
+        ...(work.data[notice.appId] ?? []),
+        ...(runtimeRef.current.messages[notice.appId] ?? []),
+      ].find((item) => item.meta.conversationId === notice.threadId);
+      if (!conversation) return;
+      thread = notice.threadTitle || conversation.title;
+    }
+    open(notice.appId, thread);
+  };
+  const openNotification = (notice: NotificationContent) => {
+    setPanel("");
+    if (locked) {
+      pendingNotification.current = notice;
+      beginUnlock();
+    } else {
+      routeNotification(notice);
+    }
+  };
+  const addTestWeChatNotification = () => {
+    const conversation = (work.data.wechat ?? []).find(
+      (item) => item.meta.conversationId === "wechat-zhangji",
+    );
+    if (
+      !conversation ||
+      !work.apps.some((a) => a.id === "wechat" && a.installed)
+    )
+      return;
+    const notice = JSON.stringify({
+      kind: "app-notification",
+      appId: "wechat",
+      appName: "微信",
+      contactName: "张极",
+      body: "测试通知",
+      threadId: "wechat-zhangji",
+      threadTitle: conversation.title,
+    });
+    update({
+      ...runtimeRef.current,
+      notifications: [...runtimeRef.current.notifications, notice],
+    });
+  };
   const unlock = (pin = "") => {
     if (!work.phone.passcode || pin === work.phone.passcode) {
       setLocked(false);
       setPinOpen(false);
       event("password", pin);
+      const pending = pendingNotification.current;
+      pendingNotification.current = null;
+      if (pending) routeNotification(pending);
     } else {
       setPinError("密码不正确");
       setPinOpen(true);
@@ -428,6 +481,7 @@ function PhoneRuntime({
                 setPinOpen={setPinOpen}
                 error={pinError}
                 onUnlock={unlock}
+                onOpenNotification={openNotification}
                 onLight={() => setPanel("light")}
                 onCamera={() => {
                   setQuickCamera(true);
@@ -456,6 +510,7 @@ function PhoneRuntime({
                   onEdit={(item) => onEdit?.(app, item)}
                   onAdd={() => onAdd?.(app)}
                   onBack={() => setApp("")}
+                  initialThread={threadTarget}
                   onSettings={onSettings}
                   onUi={(key, value) => {
                     const current = runtimeRef.current;
@@ -555,16 +610,19 @@ function PhoneRuntime({
                     <SystemNotifications
                       notices={s.notifications}
                       apps={work.apps}
-                      onOpen={() => {
-                        setPanel("");
-                        if (locked) beginUnlock();
-                        else if (installedApps.some((a) => a.id === "messages"))
-                          open("messages");
-                      }}
+                      onOpen={openNotification}
                       onDismiss={dismissNotice}
                     />
                   ) : (
                     <p>没有新通知</p>
+                  )}
+                  {!creator && work.apps.some((a) => a.id === "wechat" && a.installed) && (
+                    <button
+                      className="glass-btn"
+                      onClick={addTestWeChatNotification}
+                    >
+                      发送微信测试通知（张极）
+                    </button>
                   )}
                 </>
               ) : panel === "search" ? (
@@ -867,6 +925,7 @@ function AppContent({
   onSettings,
   onUi,
   work,
+  initialThread,
 }: {
   app: AppPlugin;
   name: string;
@@ -880,9 +939,13 @@ function AppContent({
   onSettings?: () => void;
   onUi?: (key: string, value: UiValue) => void;
   work: Work;
+  initialThread: string;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
-  const [thread, setThread] = useState("");
+  const [thread, setThread] = useState(initialThread);
+  useEffect(() => {
+    setThread(initialThread);
+  }, [initialThread]);
   const [tab, setTab] = useState(app.tabs[0]);
   const [q, setQ] = useState("");
   const [pw, setPw] = useState("");
