@@ -3892,6 +3892,8 @@ label {
   color: #888;
 }
 .wx-contact {
+  justify-content: flex-start;
+  text-align: left;
   font-size: 14px;
 }
 .wx-discovery {
