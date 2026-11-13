@@ -166,12 +166,12 @@ export function WeChatSkin(p: SkinProps) {
   const conversations = [
     ...new Set(
       p.items
-        .filter((i) => !["朋友圈", "我"].includes(i.folder) && i.meta.profileAsset !== "wechat-avatar")
+        .filter((i) => !["朋友圈", "我", "通讯录", "资料"].includes(i.folder) && i.meta.profileAsset !== "wechat-avatar")
         .map((i) => i.title),
     ),
   ];
   const contacts = [
-    ...new Set(p.items.filter((i) => i.meta.profileAsset !== "wechat-avatar").map((i) => i.sender).filter((s) => s !== "我")),
+    ...new Set(p.items.filter((i) => i.folder === "通讯录").map((i) => i.sender).filter((s) => s && s !== "我")),
   ];
   const posts = p.items.filter(
     (i) => (i.folder === "朋友圈" || i.kind === "post") && i.meta.profileAsset !== "wechat-avatar",
@@ -376,7 +376,7 @@ export function WeChatSkin(p: SkinProps) {
                   key={c}
                   className="wx-contact"
                   onClick={() => {
-                    const item = p.items.find((i) => i.sender === c);
+                    const item = p.items.find((i) => i.folder !== "通讯录" && i.title === c) ?? p.items.find((i) => i.folder === "通讯录" && i.sender === c);
                     if (item) {
                       p.onThread(item.title);
                       p.onRead(item.title);
@@ -385,7 +385,7 @@ export function WeChatSkin(p: SkinProps) {
                 >
                   <Avatar
                     name={c}
-                    src={p.items.find((i) => i.sender === c)?.avatar}
+                    src={p.items.find((i) => i.meta.profileAsset === "wechat-avatar")?.avatar || p.items.find((i) => i.sender === c)?.avatar}
                   />
                   {c}
                 </button>
