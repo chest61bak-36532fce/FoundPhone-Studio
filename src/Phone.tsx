@@ -135,6 +135,7 @@ function PhoneRuntime({
 }) {
   const [app, setApp] = useState("");
   const [threadTarget, setThreadTarget] = useState("");
+  const [threadRequest, setThreadRequest] = useState(0);
   const pendingNotification = useRef<NotificationContent | null>(null);
   const [homeRequest, setHomeRequest] = useState(0);
   const [locked, setLocked] = useState(!creator);
@@ -271,6 +272,7 @@ function PhoneRuntime({
   const open = (id: string, thread = "") => {
     if (!work.apps.some((a) => a.id === id && a.installed)) return;
     setThreadTarget(thread);
+    setThreadRequest((value) => value + 1);
     setApp(id);
     setKeyboard(false);
     setRecent((v) => [id, ...v.filter((a) => a !== id)].slice(0, 8));
@@ -511,6 +513,7 @@ function PhoneRuntime({
                   onAdd={() => onAdd?.(app)}
                   onBack={() => setApp("")}
                   initialThread={threadTarget}
+                  threadRequest={threadRequest}
                   onSettings={onSettings}
                   onUi={(key, value) => {
                     const current = runtimeRef.current;
@@ -926,6 +929,7 @@ function AppContent({
   onUi,
   work,
   initialThread,
+  threadRequest,
 }: {
   app: AppPlugin;
   name: string;
@@ -940,12 +944,13 @@ function AppContent({
   onUi?: (key: string, value: UiValue) => void;
   work: Work;
   initialThread: string;
+  threadRequest: number;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState(initialThread);
   useEffect(() => {
     setThread(initialThread);
-  }, [initialThread]);
+  }, [initialThread, threadRequest]);
   const [tab, setTab] = useState(app.tabs[0]);
   const [q, setQ] = useState("");
   const [pw, setPw] = useState("");
